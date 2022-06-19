@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+
+[dev-packages]
+black = "*"
+isort = "*"
+mypy = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+pep8 = "python -m flake8"
+isort = "python -m isort --sp pyproject.toml --skip .venv ."
+check-isort = "python -m isort --sp pyproject.toml --skip .venv . --check"
+black = "python -m black src"
+check-black = "python -m black --check src"
+mypy = "python -m mypy ."
+test = "python -m pytest"
